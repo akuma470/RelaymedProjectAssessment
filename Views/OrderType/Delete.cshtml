@@ -1,0 +1,37 @@
+﻿@model PatientManagementSystem.Models.OrderType
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="page-header text-center"><h2 style="color:cornflowerblue">Are you sure you want to delete?</h2></div>
+<div class="text-center">
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecimenType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SpecimenType)
+        </dd>
+
+    </dl>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back", "Index")
+            </div>
+        }
+</div>

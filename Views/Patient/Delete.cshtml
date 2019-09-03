@@ -1,0 +1,58 @@
+﻿@model PatientManagementSystem.Models.Patient
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="page-header text-center"><h2 style="color:cornflowerblue">Are you sure you want to delete?</h2></div>
+<fieldset class="text-center">
+    <!--<legend>Patient</legend>-->
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.MedicalRecordNumber)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.MedicalRecordNumber)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FirstName)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.LastName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LastName)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Address)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Address)
+        </div>
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group text-center">
+
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back", "Index")
+    </div>
+}

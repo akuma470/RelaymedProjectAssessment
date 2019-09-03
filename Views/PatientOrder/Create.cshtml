@@ -1,0 +1,79 @@
+﻿@model PatientManagementSystem.Models.PatientOrder
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="page-header text-center"><h2 style="color:cornflowerblue">Patient Order Creation</h2></div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <fieldset class="text-center">
+        <!--<legend>PatientOrder</legend>-->
+        <div class="form-group">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PatientOrderId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PatientOrderId)
+                @Html.ValidationMessageFor(model => model.PatientOrderId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CreationDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CreationDate)
+                @Html.ValidationMessageFor(model => model.CreationDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.PatientId)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.PatientId)
+                @Html.ValidationMessageFor(model => model.PatientId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.OrderCode)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.OrderCode)
+
+                @Html.ValidationMessageFor(model => model.OrderCode)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Status)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Status", new List<SelectListItem> {
+             new SelectListItem{Text="Requested",Value="Requested"},
+        })
+                @Html.ValidationMessageFor(model => model.Status)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Create" />&nbsp;&nbsp;&nbsp;
+            @Html.ActionLink("Back", "Index")
+        </div>
+    </fieldset>
+}
+
+
+
+
+
+

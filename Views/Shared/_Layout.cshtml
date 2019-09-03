@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-default alert-info">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><strong>Patient Record Management System</strong></a>
+            </div>
+            <ul class="nav navbar-nav pull-right">
+                <!--<li><a href="#">Home</a></li>-->
+                <li><a href="/patient/index"><strong>Patient</strong></a></li>
+                <li><a href="/OrderType/index"><strong>Order Type</strong></a></li>
+                <li><a href="/PatientOrder/index"><strong>Patient Order</strong></a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+</body>
+</html>

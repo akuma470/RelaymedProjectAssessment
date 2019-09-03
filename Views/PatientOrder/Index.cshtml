@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PatientManagementSystem.Models.PatientOrder>
+
+@{
+    ViewBag.Title = "Patient Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-primary text-center">Patient Orders</h2><hr />
+
+<div class="btn btn-default pull-right">
+    @Html.ActionLink("Request Order", "Create")
+</div><br /><br/>
+<div>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th>Patient Order Id</th>
+            <th>Creation Date</th>
+            <th>Patient Id</th>
+            <th>Order Code</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PatientOrderId</td>
+                <td>@item.CreationDate</td>
+                <td>@item.PatientId</td>
+                <td>@item.OrderCode</td>
+                <td>@item.Status</td>
+                <td>
+                    @Html.ActionLink("Update", "Edit", new { id = item.PatientOrderId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PatientOrderId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

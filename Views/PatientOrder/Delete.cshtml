@@ -1,0 +1,55 @@
+﻿@model PatientManagementSystem.Models.PatientOrder
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-header text-center"><h2 style="color:cornflowerblue">Are you sure you want to delete?</h2></div>
+
+<fieldset class="text-center">
+    <!--<legend>PatientOrder</legend>-->
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CreationDate)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.PatientId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PatientId)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.OrderCode)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.OrderCode)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Status)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Status)
+        </div>
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="text-center">
+        <input type="submit" value="Delete" />&nbsp;&nbsp;&nbsp;
+        @Html.ActionLink("Back", "Index")
+    </div>
+}
